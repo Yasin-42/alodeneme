@@ -1,0 +1,68 @@
+<!DOCTYPE html>
+<html lang="tr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>ALO GRUBU HATIRA YAD ETME SAYFASI</title>
+    <style>
+        .text-image-button {
+            display: inline-block;
+            padding: 10px;
+            background-color: #f0f0f0;
+            border: 1px solid #000000;
+            cursor: pointer;
+        }
+        .text-image-button img {
+            vertical-align: middle;
+            margin-right: 5px;
+            width: 50%; /* Corrected image size */
+        }
+        #randomImage {
+            margin-top: 20px;
+            width: 25%;
+        }
+    </style>
+</head>
+<body>
+    <!-- Button to trigger random image display -->
+    <button onclick="showRandomImage()" class="text-image-button">
+        Rastgele Resim Göster
+    </button>
+
+    <!-- Placeholder to display the random image -->
+    <div id="randomImageContainer">
+        <img id="randomImage" src="" alt="Random Image" style="display:none;">
+    </div>
+
+    <p>AA</p>
+    <p>aa</p>
+
+    <script>
+        // Resimler dizisi (array) içerisinde birden fazla resim URL'si saklanacak
+        const images = [
+            "h/deneme1.jpeg",
+            "h/1.jpg",  // Başka bir resim URL'si ekleyin
+            "h/2.jpg",
+            "h/3.jpg",
+            "h/4.jpg",
+            "h/5.jpg",
+            "h/6.jpg",
+            "h/7.jpg",
+        ];
+
+        // Rastgele resim gösterme fonksiyonu
+        function showRandomImage() {
+            // Rastgele bir index seç
+            const randomIndex = Math.floor(Math.random() * images.length);
+            
+            // Seçilen resmin URL'sini al
+            const randomImageURL = images[randomIndex];
+
+            // Resmi sayfada göster
+            const imageElement = document.getElementById("randomImage");
+            imageElement.src = randomImageURL;
+            imageElement.style.display = "block"; // Resmi görünür yap
+        }
+    </script>
+</body>
+</html>
